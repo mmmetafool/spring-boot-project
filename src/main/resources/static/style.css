@@ -1,0 +1,17 @@
+.elem {
+	display: inline-block;
+	margin-right: 1em;
+	float:left;
+	width: 8em;
+}
+
+
+.firstWeek {
+	color: #ff9999;
+}
+
+.backButton {
+	padding-left: 1em;
+	padding-bottom: 1em;
+}
+

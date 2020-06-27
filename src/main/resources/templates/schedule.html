@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <span th:inline="text" class="navbar-text" >
+    Здравствуйте [[${#httpServletRequest.remoteUser}]]!
+      <a th:href="@{/logout}">Выйти</a>
+  </span>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Расписание на следующие 7 дней: </h5>
+                        <div class="elem firstWeek">
+                            <div th:each="el : ${infoToday}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoTomorrow}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoDayThree}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoDayFour}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoDayFive}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoDaySix}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                        <div class="elem">
+                            <div th:each="el : ${infoDaySeven}">
+                                <p th:text="${el}"></p>
+                            </div>
+                        </div>
+                </div>
+                <a th:href="@{/hello}" class="backButton">Выйти на главную страницу</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

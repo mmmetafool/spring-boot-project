@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <span th:inline="text" class="navbar-text" >
+    Здравствуйте [[${#httpServletRequest.remoteUser}]]!
+      <a th:href="@{/logout}">Выйти</a>
+  </span>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Расписание на сегодня</h5>
+                    <div th:each="el : ${infos}">
+                        <p th:text="${el}"></p>
+                    </div>
+                    <a th:href="@{/schedule}">Посмотреть расписание на следующие 7 дней</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Академические успехи</h5>
+                    <div th:each="el : ${academicPerformanceInfo}">
+                        <p th:text="${el}"></p>
+                    </div>
+                    <a th:href="@{/performance}">Посмотреть полную информацию об успеваемости</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
