@@ -1,17 +1,13 @@
 package com.diploma.diplomaproject.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "lesson")
-public class lesson {
+@Entity(name = "Lesson")
+public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer LessonID;
-
     private Integer GradeID;
     private Integer TeachersID;
     private String subjectname;
