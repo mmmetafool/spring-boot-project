@@ -41,12 +41,8 @@ public class HelloController {
             String user ="root";
             String pass ="Gottmituns7";
             String username;
-            String studentsList = "";
-            String studID ="";
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date(System.currentTimeMillis());
-            Integer num = 1;
-            String subjectInfo = "";
+            String studID;
+            String subjectInfo;
 
 
             List<String> subjectNameInfo = new ArrayList<>();
@@ -122,8 +118,6 @@ public class HelloController {
             String pass ="Gottmituns7";
             String username;
             String gradeNumber = "";
-            String studID ="";
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd", new Locale("ru"));
             Date date = new Date(System.currentTimeMillis());
             Integer num = 1;
 
@@ -264,9 +258,8 @@ public class HelloController {
             String user ="root";
             String pass ="Gottmituns7";
             String username;
-            String studentsList = "";
-            String studID ="";
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+            String studentsList;
+            String studID;
             Date date = new Date(System.currentTimeMillis());
             Integer num = 1;
             String subjectInfo = "";
